@@ -9,14 +9,37 @@ import {
 	renderLoggedOutAuthorizeScreen,
 } from "./utils";
 import type { OAuthHelpers } from "@cloudflare/workers-oauth-provider";
+import { cloudflareAccessMiddleware } from "./middleware";
 
 export type Bindings = Env & {
 	OAUTH_PROVIDER: OAuthHelpers;
+	CLOUDFLARE_ACCESS_TEAM_DOMAIN?: string;
+	CLOUDFLARE_ACCESS_POLICY_AUD?: string;
 };
 
 const app = new Hono<{
 	Bindings: Bindings;
 }>();
+
+// Apply Cloudflare Access JWT validation middleware to all routes
+// This ensures only authenticated users from your Cloudflare Access can access the application
+app.use('*', async (c, next) => {
+	// Check if Cloudflare Access is configured
+	const teamDomain = c.env.CLOUDFLARE_ACCESS_TEAM_DOMAIN;
+	const policyAud = c.env.CLOUDFLARE_ACCESS_POLICY_AUD;
+
+	if (teamDomain && policyAud) {
+		// Apply Cloudflare Access middleware
+		const middleware = cloudflareAccessMiddleware({
+			teamDomain,
+			policyAud,
+		});
+		return middleware(c, next);
+	}
+
+	// If not configured, continue without validation (for development)
+	await next();
+});
 
 // Render a basic homepage placeholder to make sure the app is up
 app.get("/", async (c) => {

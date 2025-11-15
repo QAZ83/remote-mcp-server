@@ -31,5 +31,9 @@
 	"observability": {
 		"enabled": true
 	},
-	"assets": { "directory": "./static/", "binding": "ASSETS" }
+	"assets": { "directory": "./static/", "binding": "ASSETS" },
+	"vars": {
+		"CLOUDFLARE_ACCESS_TEAM_DOMAIN": "h-2883.cloudflareaccess.com",
+		"CLOUDFLARE_ACCESS_POLICY_AUD": "fe4b0e5cff2579c6d90b08238e70425b2875d15497b71fc4f1b6a90e49e7bef3"
+	}
 }
