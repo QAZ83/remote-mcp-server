@@ -5,8 +5,13 @@
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
+![Website](https://img.shields.io/badge/website-aiforgestudio.net-00FFFF)
 
 **AI Forge Studio** is a professional desktop application designed specifically for NVIDIA RTX 50-Series GPU users. It combines cutting-edge artificial intelligence with advanced graphics processing to deliver high-quality image generation, real-time hardware monitoring, and AI model management.
+
+🌐 **Official Website:** [aiforgestudio.net](https://aiforgestudio.net)
+📖 **Documentation:** [aiforgestudio.net/docs](https://aiforgestudio.net/docs/getting-started.html)
+💾 **Download:** [aiforgestudio.net/#download](https://aiforgestudio.net/#download)
 
 ---
 
