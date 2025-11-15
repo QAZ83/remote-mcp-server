@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البدء السريع - AI Forge Studio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .doc-page {
+            max-width: 900px;
+            margin: 100px auto;
+            padding: 2rem;
+        }
+        .doc-content {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+        }
+        .doc-content h1 {
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+        }
+        .doc-content h2 {
+            color: var(--accent-purple);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .doc-content h3 {
+            color: var(--accent-cyan);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .doc-content pre {
+            background: rgba(10, 10, 15, 0.8);
+            padding: 1.5rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid var(--glass-border);
+        }
+        .doc-content code {
+            font-family: var(--font-mono);
+            color: var(--accent-cyan);
+        }
+        .doc-content ul, .doc-content ol {
+            margin-right: 2rem;
+            line-height: 2;
+        }
+        .doc-content li {
+            margin-bottom: 0.5rem;
+        }
+        .note {
+            background: rgba(0, 255, 255, 0.1);
+            border-right: 4px solid var(--accent-cyan);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        .warning {
+            background: rgba(255, 165, 0, 0.1);
+            border-right: 4px solid #FFA500;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">AI FORGE STUDIO</span>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="../index.html#features">المميزات</a></li>
+                        <li><a href="../index.html#download">تحميل</a></li>
+                        <li><a href="getting-started.html">التوثيق</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="doc-page">
+        <div class="doc-content">
+            <h1>🚀 البدء السريع</h1>
+            <p>مرحباً بك في AI Forge Studio! هذا الدليل سيساعدك على تثبيت وإعداد البرنامج في دقائق.</p>
+
+            <h2>📋 المتطلبات</h2>
+
+            <h3>الحد الأدنى:</h3>
+            <ul>
+                <li><strong>GPU:</strong> NVIDIA RTX 4060 أو أعلى</li>
+                <li><strong>RAM:</strong> 16 GB</li>
+                <li><strong>Storage:</strong> 50 GB مساحة فارغة</li>
+                <li><strong>نظام التشغيل:</strong> Windows 10/11 (64-bit) أو Ubuntu 22.04+</li>
+                <li><strong>Driver:</strong> NVIDIA Driver 550.0 أو أحدث</li>
+            </ul>
+
+            <h3>الموصى به:</h3>
+            <ul>
+                <li><strong>GPU:</strong> NVIDIA RTX 5080/5090</li>
+                <li><strong>RAM:</strong> 32 GB+</li>
+                <li><strong>Storage:</strong> 100 GB+ SSD</li>
+                <li><strong>Display:</strong> 4K</li>
+            </ul>
+
+            <div class="note">
+                <strong>ملاحظة:</strong> البرنامج مصمم خصيصاً لبطاقات RTX 50-Series للاستفادة من DLSS 3.5 وRay Tracing.
+            </div>
+
+            <h2>📥 التثبيت</h2>
+
+            <h3>Windows:</h3>
+            <pre><code># 1. حمّل المثبت من:
+https://aiforgestudio.net/#download
+
+# 2. شغّل المثبت
+AIForgeStudio-1.0.0-Setup.exe
+
+# 3. اتبع التعليمات على الشاشة
+</code></pre>
+
+            <h3>Linux (Ubuntu/Debian):</h3>
+            <pre><code># 1. حمّل ملف .deb
+wget https://github.com/QAZ83/remote-mcp-server/releases/download/v1.0.0/AIForgeStudio-1.0.0.deb
+
+# 2. ثبّت الحزمة
+sudo dpkg -i AIForgeStudio-1.0.0.deb
+
+# 3. ثبّت التبعيات إذا لزم الأمر
+sudo apt-get install -f
+</code></pre>
+
+            <h3>من المصدر:</h3>
+            <pre><code># استنسخ المستودع
+git clone https://github.com/QAZ83/remote-mcp-server.git
+cd remote-mcp-server/AI-Forge-Studio
+
+# ثبّت التبعيات
+sudo apt install qt6-base-dev qt6-declarative-dev cmake
+
+# ابنِ المشروع
+mkdir build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+cmake --build . -j$(nproc)
+
+# شغّل البرنامج
+./AIForgeStudio
+</code></pre>
+
+            <h2>🎯 الإعداد الأولي</h2>
+
+            <h3>1. التشغيل الأول</h3>
+            <p>عند تشغيل البرنامج لأول مرة، سيقوم بـ:</p>
+            <ul>
+                <li>فحص GPU المتوفرة</li>
+                <li>تهيئة CUDA و TensorRT</li>
+                <li>إنشاء مجلدات العمل</li>
+                <li>عرض لوحة القيادة</li>
+            </ul>
+
+            <h3>2. تحميل أول نموذج</h3>
+            <ol>
+                <li>اذهب إلى تبويب <strong>Models</strong></li>
+                <li>اضغط على <strong>Load Model</strong> أو <strong>Import from HF</strong></li>
+                <li>اختر نموذج Stable Diffusion XL مثلاً</li>
+                <li>انتظر التحميل (قد يستغرق عدة دقائق)</li>
+            </ol>
+
+            <div class="note">
+                <strong>نصيحة:</strong> للمرة الأولى، استخدم نموذج أصغر مثل Stable Diffusion 1.5 للتجربة السريعة.
+            </div>
+
+            <h3>3. توليد أول صورة</h3>
+            <ol>
+                <li>اذهب إلى تبويب <strong>Render</strong></li>
+                <li>اختر النموذج المحمل</li>
+                <li>اكتب نص وصفي (Prompt):</li>
+            </ol>
+
+            <pre><code>A futuristic AI laboratory with glowing holographic displays,
+neon lights, advanced computers, cinematic lighting, 8K, detailed</code></pre>
+
+            <ol start="4">
+                <li>اضبط الإعدادات:
+                    <ul>
+                        <li>Steps: 50</li>
+                        <li>Guidance: 7.5</li>
+                        <li>Resolution: 512x512</li>
+                    </ul>
+                </li>
+                <li>اضغط <strong>Generate Image</strong></li>
+            </ol>
+
+            <h2>⚙️ التحسين</h2>
+
+            <h3>تفعيل TensorRT:</h3>
+            <ol>
+                <li>في تبويب <strong>Models</strong></li>
+                <li>اختر النموذج</li>
+                <li>اضغط <strong>Optimize</strong></li>
+                <li>اختر FP16 (موصى به لـ RTX 50)</li>
+            </ol>
+
+            <div class="warning">
+                <strong>تحذير:</strong> التحسين يستغرق 5-10 دقائق لكنه يزيد السرعة 2-3x في الاستخدامات اللاحقة.
+            </div>
+
+            <h3>تفعيل DLSS:</h3>
+            <ol>
+                <li>اذهب إلى <strong>Settings</strong></li>
+                <li>تبويب <strong>Graphics</strong></li>
+                <li>فعّل <strong>Enable DLSS 3.5</strong></li>
+            </ol>
+
+            <h2>🎓 الخطوات التالية</h2>
+            <ul>
+                <li><a href="user-guide.html">اقرأ دليل المستخدم الكامل</a></li>
+                <li><a href="api-reference.html">تعلم استخدام API</a></li>
+                <li><a href="troubleshooting.html">حل المشاكل الشائعة</a></li>
+            </ul>
+
+            <h2>💬 المساعدة</h2>
+            <p>إذا واجهت أي مشاكل:</p>
+            <ul>
+                <li><a href="troubleshooting.html">راجع دليل استكشاف الأخطاء</a></li>
+                <li><a href="https://github.com/QAZ83/remote-mcp-server/issues">أبلغ عن مشكلة على GitHub</a></li>
+                <li><a href="https://github.com/QAZ83/remote-mcp-server/discussions">شارك في المنتدى</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Forge Studio. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
