@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Forge Studio - تطبيق سطح مكتب احترافي للذكاء الاصطناعي موجه لمستخدمي بطاقات NVIDIA RTX 50-Series">
+    <meta name="keywords" content="AI, NVIDIA, RTX 5090, Stable Diffusion, CUDA, TensorRT, Image Generation">
+    <meta name="author" content="AI Forge Studio">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI Forge Studio - RTX 50-Series Edition">
+    <meta property="og:description" content="تطبيق سطح مكتب احترافي يدمج الذكاء الاصطناعي مع معالجة الرسوميات المتقدمة">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aiforgestudio.net">
+
+    <title>AI Forge Studio - RTX 50-Series Edition</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">AI FORGE STUDIO</span>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#features">المميزات</a></li>
+                        <li><a href="#showcase">معرض</a></li>
+                        <li><a href="#download">تحميل</a></li>
+                        <li><a href="#docs">التوثيق</a></li>
+                        <li><a href="https://github.com/QAZ83/remote-mcp-server" target="_blank">GitHub</a></li>
+                    </ul>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">🚀</span>
+                    <span>RTX 50-Series Edition</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="gradient-text">AI Forge Studio</span>
+                </h1>
+                <p class="hero-subtitle">
+                    تطبيق سطح مكتب احترافي يدمج الذكاء الاصطناعي مع معالجة الرسوميات المتقدمة
+                </p>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <span class="feature-icon">⚡</span>
+                        <span>CUDA & TensorRT</span>
+                    </div>
+                    <div class="hero-feature">
+                        <span class="feature-icon">🎨</span>
+                        <span>DLSS 3.5</span>
+                    </div>
+                    <div class="hero-feature">
+                        <span class="feature-icon">🔥</span>
+                        <span>Ray Tracing</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary">
+                        <span>تحميل الآن</span>
+                        <span class="btn-icon">📥</span>
+                    </a>
+                    <a href="#docs" class="btn btn-secondary">
+                        <span>التوثيق</span>
+                        <span class="btn-icon">📖</span>
+                    </a>
+                    <a href="https://github.com/QAZ83/remote-mcp-server" class="btn btn-outline" target="_blank">
+                        <span>GitHub</span>
+                        <span class="btn-icon">⭐</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Animated Terminal Preview -->
+            <div class="terminal-preview">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn red"></span>
+                        <span class="terminal-btn yellow"></span>
+                        <span class="terminal-btn green"></span>
+                    </div>
+                    <div class="terminal-title">AI Forge Studio v1.0.0</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-text">./AIForgeStudio</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-output success">✓ Hardware monitor initialized</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-output">GPU: NVIDIA GeForce RTX 5090</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-output">VRAM: 24 GB GDDR7</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-output success">✓ AI engine initialized</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-output cyan">Loaded: Stable Diffusion XL</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-output success">✓ System ready!</span>
+                    </div>
+                    <div class="terminal-line terminal-cursor">
+                        <span class="terminal-prompt">$</span>
+                        <span class="cursor-blink">_</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Particles -->
+        <div class="particles" id="particles"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🚀</div>
+                    <div class="stat-number">2-3x</div>
+                    <div class="stat-label">أسرع مع TensorRT</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎨</div>
+                    <div class="stat-number">4K+</div>
+                    <div class="stat-label">معاينة في الوقت الفعلي</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💾</div>
+                    <div class="stat-number">24GB</div>
+                    <div class="stat-label">دعم VRAM</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-number">60 FPS</div>
+                    <div class="stat-label">أداء سلس</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">المميزات الرئيسية</h2>
+                <p class="section-subtitle">كل ما تحتاجه للذكاء الاصطناعي والرسوميات المتقدمة</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">مراقبة في الوقت الفعلي</h3>
+                    <p class="feature-description">
+                        مراقبة GPU/CPU/RAM/VRAM مع رسوم بيانية متقدمة باستخدام NVIDIA NVML
+                    </p>
+                    <ul class="feature-list">
+                        <li>استخدام GPU ودرجة الحرارة</li>
+                        <li>استهلاك الطاقة والذاكرة</li>
+                        <li>دعم متعدد GPU</li>
+                        <li>إحصائيات مفصلة</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card featured">
+                    <div class="featured-badge">الأكثر شعبية</div>
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">إدارة نماذج الذكاء الاصطناعي</h3>
+                    <p class="feature-description">
+                        دعم شامل لنماذج Stable Diffusion، SDXL، وأكثر مع تحسين TensorRT
+                    </p>
+                    <ul class="feature-list">
+                        <li>SafeTensors، GGUF، ONNX</li>
+                        <li>تحميل من HuggingFace</li>
+                        <li>تحسين FP16/INT8</li>
+                        <li>إدارة ذاكرة تلقائية</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">محرك رسوميات متقدم</h3>
+                    <p class="feature-description">
+                        Vulkan/DirectX 12 مع DLSS 3.5 وRay Tracing لمعاينة فائقة الجودة
+                    </p>
+                    <ul class="feature-list">
+                        <li>معاينة 4K+ في الوقت الفعلي</li>
+                        <li>NVIDIA DLSS 3.5</li>
+                        <li>Hardware Ray Tracing</li>
+                        <li>HDR Support</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🐍</div>
+                    <h3 class="feature-title">جسر Python</h3>
+                    <p class="feature-description">
+                        تكامل سلس مع PyTorch ونماذج Python عبر Pybind11
+                    </p>
+                    <ul class="feature-list">
+                        <li>دعم PyTorch/Diffusers</li>
+                        <li>تشغيل نماذج Python</li>
+                        <li>نقل بيانات فعال</li>
+                        <li>API مرنة</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 class="feature-title">تحسين الأداء</h3>
+                    <p class="feature-description">
+                        أدوات متقدمة لتحسين الأداء واستغلال قوة RTX 50-Series
+                    </p>
+                    <ul class="feature-list">
+                        <li>TensorRT Optimization</li>
+                        <li>VRAM ↔ RAM Offloading</li>
+                        <li>Multi-GPU Support</li>
+                        <li>Precision Modes</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">واجهة سهلة</h3>
+                    <p class="feature-description">
+                        تصميم Glass-morphism عصري مع تجربة مستخدم سلسة
+                    </p>
+                    <ul class="feature-list">
+                        <li>تصميم Neon Cyan/Purple</li>
+                        <li>واجهة متجاوبة</li>
+                        <li>تحديثات لحظية</li>
+                        <li>تنقل سهل</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">التقنيات المستخدمة</h2>
+                <p class="section-subtitle">مبني بأحدث التقنيات</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-logo">C++17</div>
+                    <div class="tech-name">C++ Modern</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">Qt6</div>
+                    <div class="tech-name">Qt 6 Framework</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">CUDA</div>
+                    <div class="tech-name">CUDA 12</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">TRT</div>
+                    <div class="tech-name">TensorRT 8</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">VK</div>
+                    <div class="tech-name">Vulkan 1.3</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">🐍</div>
+                    <div class="tech-name">Python 3.10+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download" id="download">
+        <div class="container">
+            <div class="download-content">
+                <div class="download-info">
+                    <h2 class="section-title">جاهز للبدء؟</h2>
+                    <p class="section-subtitle">
+                        حمّل AI Forge Studio الآن وابدأ رحلتك مع الذكاء الاصطناعي
+                    </p>
+
+                    <div class="system-requirements">
+                        <h3>المتطلبات الموصى بها:</h3>
+                        <ul>
+                            <li><strong>GPU:</strong> NVIDIA RTX 5080/5090</li>
+                            <li><strong>RAM:</strong> 32 GB+</li>
+                            <li><strong>Storage:</strong> 100 GB+ SSD</li>
+                            <li><strong>OS:</strong> Windows 10/11 أو Ubuntu 22.04+</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="download-options">
+                    <div class="download-card">
+                        <div class="platform-icon">🪟</div>
+                        <h3>Windows</h3>
+                        <p>Windows 10/11 (64-bit)</p>
+                        <a href="https://github.com/QAZ83/remote-mcp-server/releases" class="btn btn-primary" target="_blank">
+                            <span>تحميل</span>
+                            <span class="btn-icon">📥</span>
+                        </a>
+                        <div class="download-details">
+                            <span>الإصدار: 1.0.0</span>
+                            <span>الحجم: ~250 MB</span>
+                        </div>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="platform-icon">🐧</div>
+                        <h3>Linux</h3>
+                        <p>Ubuntu 22.04+ / Debian</p>
+                        <a href="https://github.com/QAZ83/remote-mcp-server/releases" class="btn btn-primary" target="_blank">
+                            <span>تحميل</span>
+                            <span class="btn-icon">📥</span>
+                        </a>
+                        <div class="download-details">
+                            <span>الإصدار: 1.0.0</span>
+                            <span>الحجم: ~220 MB</span>
+                        </div>
+                    </div>
+
+                    <div class="download-card">
+                        <div class="platform-icon">📦</div>
+                        <h3>من المصدر</h3>
+                        <p>Build from source</p>
+                        <a href="https://github.com/QAZ83/remote-mcp-server" class="btn btn-outline" target="_blank">
+                            <span>GitHub</span>
+                            <span class="btn-icon">⭐</span>
+                        </a>
+                        <div class="download-details">
+                            <span>CMake 3.16+</span>
+                            <span>C++17</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section class="documentation" id="docs">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">التوثيق</h2>
+                <p class="section-subtitle">كل ما تحتاج لمعرفته للبدء</p>
+            </div>
+
+            <div class="docs-grid">
+                <a href="docs/getting-started.html" class="doc-card">
+                    <div class="doc-icon">🚀</div>
+                    <h3>البدء السريع</h3>
+                    <p>تثبيت وإعداد البرنامج في دقائق</p>
+                </a>
+
+                <a href="docs/user-guide.html" class="doc-card">
+                    <div class="doc-icon">📖</div>
+                    <h3>دليل المستخدم</h3>
+                    <p>شرح شامل لجميع المميزات</p>
+                </a>
+
+                <a href="docs/api-reference.html" class="doc-card">
+                    <div class="doc-icon">⚙️</div>
+                    <h3>API Reference</h3>
+                    <p>وثائق تقنية للمطورين</p>
+                </a>
+
+                <a href="docs/troubleshooting.html" class="doc-card">
+                    <div class="doc-icon">🔧</div>
+                    <h3>استكشاف الأخطاء</h3>
+                    <p>حلول للمشاكل الشائعة</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">AI FORGE STUDIO</span>
+                    </div>
+                    <p class="footer-description">
+                        تطبيق سطح مكتب احترافي للذكاء الاصطناعي موجه لمستخدمي NVIDIA RTX 50-Series
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#features">المميزات</a></li>
+                        <li><a href="#download">تحميل</a></li>
+                        <li><a href="#docs">التوثيق</a></li>
+                        <li><a href="https://github.com/QAZ83/remote-mcp-server">GitHub</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>الموارد</h4>
+                    <ul class="footer-links">
+                        <li><a href="docs/getting-started.html">البدء السريع</a></li>
+                        <li><a href="docs/user-guide.html">دليل المستخدم</a></li>
+                        <li><a href="docs/api-reference.html">API</a></li>
+                        <li><a href="docs/troubleshooting.html">المساعدة</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/QAZ83/remote-mcp-server/issues">الإبلاغ عن مشكلة</a></li>
+                        <li><a href="https://github.com/QAZ83/remote-mcp-server/discussions">المنتدى</a></li>
+                        <li><a href="mailto:info@aiforgestudio.net">البريد الإلكتروني</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Forge Studio. جميع الحقوق محفوظة.</p>
+                <div class="footer-badges">
+                    <span class="badge">MIT License</span>
+                    <span class="badge">Open Source</span>
+                    <span class="badge">v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
