@@ -6,14 +6,69 @@ import OAuthProvider from "@cloudflare/workers-oauth-provider";
 
 export class MyMCP extends McpAgent {
 	server = new McpServer({
-		name: "Demo",
+		name: "Calculator",
 		version: "1.0.0",
 	});
 
 	async init() {
+		// Addition
 		this.server.tool("add", { a: z.number(), b: z.number() }, async ({ a, b }) => ({
 			content: [{ type: "text", text: String(a + b) }],
 		}));
+
+		// Subtraction
+		this.server.tool("subtract", { a: z.number(), b: z.number() }, async ({ a, b }) => ({
+			content: [{ type: "text", text: String(a - b) }],
+		}));
+
+		// Multiplication
+		this.server.tool("multiply", { a: z.number(), b: z.number() }, async ({ a, b }) => ({
+			content: [{ type: "text", text: String(a * b) }],
+		}));
+
+		// Division
+		this.server.tool("divide", { a: z.number(), b: z.number() }, async ({ a, b }) => {
+			if (b === 0) {
+				return {
+					content: [{ type: "text", text: "Error: Division by zero is not allowed" }],
+					isError: true,
+				};
+			}
+			return {
+				content: [{ type: "text", text: String(a / b) }],
+			};
+		});
+
+		// Power (exponentiation)
+		this.server.tool("power", { base: z.number(), exponent: z.number() }, async ({ base, exponent }) => ({
+			content: [{ type: "text", text: String(Math.pow(base, exponent)) }],
+		}));
+
+		// Square root
+		this.server.tool("sqrt", { value: z.number() }, async ({ value }) => {
+			if (value < 0) {
+				return {
+					content: [{ type: "text", text: "Error: Cannot calculate square root of negative number" }],
+					isError: true,
+				};
+			}
+			return {
+				content: [{ type: "text", text: String(Math.sqrt(value)) }],
+			};
+		});
+
+		// Modulo
+		this.server.tool("modulo", { a: z.number(), b: z.number() }, async ({ a, b }) => {
+			if (b === 0) {
+				return {
+					content: [{ type: "text", text: "Error: Modulo by zero is not allowed" }],
+					isError: true,
+				};
+			}
+			return {
+				content: [{ type: "text", text: String(a % b) }],
+			};
+		});
 	}
 }
 
